@@ -1,0 +1,72 @@
+Participante: Daniel Hernández
+Premio: Papelería
+Unidad: Iztapalapa
+Valor: $1000
+Vigencia: 1 mes
+----------------------------------------
+Participante: Patricia García
+Premio: Libros físicos
+Unidad: Azcapotzalco
+Valor: $3000
+Vigencia: 3 meses
+----------------------------------------
+Participante: Cristina Rodríguez
+Premio: Libros electrónicos
+Unidad: Iztapalapa
+Valor: $3000
+Vigencia: 2 meses
+----------------------------------------
+Participante: Agustin Rivera
+Premio: Souvenirs
+Unidad: Azcapotzalco
+Valor: $1000
+Vigencia: 2 meses
+----------------------------------------
+Participante: Daniel Hernández
+Premio: Libros electrónicos
+Unidad: Xochimilco
+Valor: $2000
+Vigencia: 4 meses
+----------------------------------------
+Participante: Patricia García
+Premio: Libros físicos
+Unidad: Iztapalapa
+Valor: $3000
+Vigencia: 1 mes
+----------------------------------------
+Participante: Cristina Rodríguez
+Premio: Libros electrónicos
+Unidad: Iztapalapa
+Valor: $3000
+Vigencia: 2 meses
+----------------------------------------
+Participante: Agustin Rivera
+Premio: Libros físicos
+Unidad: Iztapalapa
+Valor: $1000
+Vigencia: 2 meses
+----------------------------------------
+Participante: Daniel Hernández
+Premio: Libros físicos
+Unidad: Azcapotzalco
+Valor: $3000
+Vigencia: 3 meses
+----------------------------------------
+Participante: Patricia García
+Premio: Souvenirs
+Unidad: Azcapotzalco
+Valor: $1000
+Vigencia: 3 meses
+----------------------------------------
+Participante: Cristina Rodríguez
+Premio: Papelería
+Unidad: Xochimilco
+Valor: $3000
+Vigencia: 1 mes
+----------------------------------------
+Participante: Agustin Rivera
+Premio: Papelería
+Unidad: Azcapotzalco
+Valor: $2000
+Vigencia: 4 meses
+----------------------------------------
