@@ -15,11 +15,9 @@ class GuessNumber(QWidget):
     def __init__(self):
         super().__init__()
 
-        # Número secreto entre 1 y 100
-        self.__secret_number = rd.randint(1, 100)
 
         # Widgets
-        self.__label_instrucciones = QLabel("Ingresa un número entre 1 y 100:")
+        self.__label_instrucciones = QLabel("Ingresa un número entre 1 y 20:")
         self.__entrada_usuario = QLineEdit()
         self.__boton_adivinar = QPushButton("Adivinar")
         self.__label_resultado = QLabel("")
@@ -43,6 +41,10 @@ class GuessNumber(QWidget):
 
     @Slot()
     def verificarNumero(self):
+        
+        # Número secreto entre 1 y 100
+        self.__secret_number = rd.randint(1, 20)
+        
         try:
             numero_usuario = int(self.__entrada_usuario.text())
             if numero_usuario < self.__secret_number:
