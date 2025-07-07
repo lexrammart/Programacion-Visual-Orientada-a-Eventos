@@ -1,0 +1,9 @@
+{
+    "vscode-pets.petSize": "medium",
+    "vscode-pets.petType": "fox",
+    "vscode-pets.position": "panel",
+    "vscode-pets.throwBallWithMouse": true,
+    "vscode-pets.disableEffects": false,
+    "vscode-pets.petColor": "brown",
+    "vscode-pets.theme": "none"
+}
