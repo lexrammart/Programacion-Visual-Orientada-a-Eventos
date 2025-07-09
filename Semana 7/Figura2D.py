@@ -17,4 +17,4 @@ class Figura2D(ABC):
         pass
 
     def __str__(self): 
-        return f"Color de la figura: {self.__color}"
+        return f"La figura es de color: {self.__color}"
