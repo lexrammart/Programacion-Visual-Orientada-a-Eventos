@@ -67,6 +67,11 @@ class Pelota(ABC):
         """Genera y asigna el valor de la pelota (número o letra). Debe implementarse en las subclases."""
         pass
 
+    @abstractmethod
+    def decifrarPremio(self):
+
+        pass
+
     # Método __str__ base
     def __str__(self):
         """Devuelve una representación de cadena con el ID, participante y color actuales."""
