@@ -69,7 +69,6 @@ class Pelota(ABC):
 
     @abstractmethod
     def decifrarPremio(self):
-
         pass
 
     # Método __str__ base

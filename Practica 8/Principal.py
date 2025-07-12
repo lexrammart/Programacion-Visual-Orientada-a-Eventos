@@ -87,6 +87,7 @@ class MainWindow(QMainWindow):
             return
 
         pelota_numero = PelotaNumero(id, name)
+        print(pelota_numero)
         premio_text = str(pelota_numero)
         self.__etNumero.setText(premio_text)
 

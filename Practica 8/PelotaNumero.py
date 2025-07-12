@@ -4,8 +4,10 @@ pelotas con valor numérico en el sorteo.
 
 Contiene la lógica para generar un número aleatorio y pintar la pelota con un color.
 """
+
 from Pelota import Pelota
 import random as rd
+
 
 class PelotaNumero(Pelota):
     """
@@ -18,9 +20,10 @@ class PelotaNumero(Pelota):
         generarValor(): Asigna aleatoriamente un número entre 1 y 4.
         pintarPelota(): Cambia el color de la pelota aleatoriamente.
     """
+
     def __init__(self, id, participante):
         super().__init__(id, participante)
-        self.__numero = 0  # valor inicial 
+        self.__numero = 0  # valor inicial
 
     @property
     def numero(self):
@@ -37,10 +40,17 @@ class PelotaNumero(Pelota):
 
     def pintarPelota(self):
         """Selecciona aleatoriamente un color para la pelota entre 'amarillo', 'morado' o 'rosa'."""
-        self.color = rd.choice(['amarillo', 'morado', 'rosa'])  # usa el setter heredado
+        self.color = rd.choice(["amarillo", "morado", "rosa"])  # usa el setter heredado
+
+    # decifrar premio
+    def decifrarPremio(self):
+        # return super().decifrarPremio()
+        pass
 
     # toString
     def __str__(self):
         """Devuelve una cadena con detalles de la pelota de número: ID, participante, color y número."""
-        return (f"[Pelota Número] ID: {self.id}, Participante: {self.participante}, "
-                f"Color: {self.color}, Número: {self.numero}")
+        return (
+            f"[Pelota Número] ID: {self.id}, Participante: {self.participante}, "
+            f"Color: {self.color}, Número: {self.numero}"
+        )

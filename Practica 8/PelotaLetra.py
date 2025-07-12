@@ -58,7 +58,6 @@ class PelotaLetra(Pelota):
             "C": "Papelería",
             "D": "Souvenirs",
         }
-        pass
 
     # toString
     def __str__(self):
