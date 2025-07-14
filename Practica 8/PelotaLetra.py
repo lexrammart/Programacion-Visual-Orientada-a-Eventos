@@ -31,7 +31,10 @@ class PelotaLetra(Pelota):
 
     @letra.setter
     def letra(self, valor):
-        self.__letra = valor
+        if valor in ["A", "B", "C", "D"]:
+            self.__letra = valor
+        else:
+            raise ValueError("Letra inválida: debe ser A, B, C o D")
 
     # métodos requeridos
     def generarValor(self):
@@ -58,6 +61,11 @@ class PelotaLetra(Pelota):
             "C": "Papelería",
             "D": "Souvenirs",
         }
+
+        unidad = unidad_map.get(self.color, "Unidad desconocida")
+        categoria = categoria_map.get(self.letra, "Categoría desconocida")
+
+        return f"Unidad: {unidad} \nCategoría: {categoria}\n"
 
     # toString
     def __str__(self):

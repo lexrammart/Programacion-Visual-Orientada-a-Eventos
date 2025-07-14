@@ -5,9 +5,11 @@ Este script lee una lista de participantes desde un archivo, genera valores alea
 y asigna premios basados en los valores de las pelotas (letra y número). Los resultados se imprimen en consola
 y se guardan en un archivo de texto.
 """
+
 from PelotaLetra import PelotaLetra
 from PelotaNumero import PelotaNumero
 import os
+
 
 def decifrarPremio(pelota_numero, pelota_letra):
     """
@@ -26,31 +28,18 @@ def decifrarPremio(pelota_numero, pelota_letra):
     participante = pelota_numero.participante  # o pelota_letra.participante
 
     # Mapas
-    unidad_map = {
-        "azul": "Xochimilco",
-        "verde": "Iztapalapa",
-        "rojo": "Azcapotzalco"
-    }
+    unidad_map = {"azul": "Xochimilco", "verde": "Iztapalapa", "rojo": "Azcapotzalco"}
 
     categoria_map = {
         "A": "Libros físicos",
         "B": "Libros electrónicos",
         "C": "Papelería",
-        "D": "Souvenirs"
+        "D": "Souvenirs",
     }
 
-    valor_map = {
-        "amarillo": "$1000",
-        "morado": "$2000",
-        "rosa": "$3000"
-    }
+    valor_map = {"amarillo": "$1000", "morado": "$2000", "rosa": "$3000"}
 
-    vigencia_map = {
-        1: "1 mes",
-        2: "2 meses",
-        3: "3 meses",
-        4: "4 meses"
-    }
+    vigencia_map = {1: "1 mes", 2: "2 meses", 3: "3 meses", 4: "4 meses"}
 
     unidad = unidad_map.get(color_let, "Unidad desconocida")
     categoria = categoria_map.get(letra, "Categoría desconocida")
@@ -75,6 +64,7 @@ def decifrarPremio(pelota_numero, pelota_letra):
 
     with open("premios.txt", "a+", encoding="utf-8") as f:
         f.write(resultado)
+
 
 def main():
     """
@@ -109,6 +99,8 @@ def main():
     finally:
         print(" Sorteo finalizado.")
 
+
 if __name__ == "__main__":
     main()
-    
+
+    # 425 x 283

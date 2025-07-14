@@ -28,7 +28,7 @@ class Pelota(ABC):
     def __init__(self, id, participante):
         self.__id = id
         self.__participante = participante
-        self.__color = "blanco"  # color inicial
+        self._color = "blanco"  # color inicial
 
     # Getters
     @property
@@ -41,7 +41,7 @@ class Pelota(ABC):
 
     @property
     def color(self):
-        return self.__color
+        return self._color
 
     # Setters
     @id.setter
@@ -54,7 +54,10 @@ class Pelota(ABC):
 
     @color.setter
     def color(self, valor):
-        self.__color = valor
+        if valor in ["blanco", "azul", "verde", "rojo", "amarillo", "morado", "rosa"]:
+            self._color = valor
+        else:
+            raise ValueError("Color inválido para la pelota.")
 
     # Métodos abstractos
     @abstractmethod
@@ -74,4 +77,4 @@ class Pelota(ABC):
     # Método __str__ base
     def __str__(self):
         """Devuelve una representación de cadena con el ID, participante y color actuales."""
-        return f"ID: {self.__id}, Participante: {self.__participante}, Color: {self.__color}"
+        return f"ID: {self.__id}, Participante: {self.__participante}, Color: {self._color}"

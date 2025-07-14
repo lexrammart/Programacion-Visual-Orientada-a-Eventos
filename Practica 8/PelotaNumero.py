@@ -31,7 +31,10 @@ class PelotaNumero(Pelota):
 
     @numero.setter
     def numero(self, valor):
-        self.__numero = valor
+        if 1 <= valor <= 4:
+            self.__numero = valor
+        else:
+            raise ValueError("Número inválido: debe estar entre 1 y 4")
 
     # métodos requeridos
     def generarValor(self):
@@ -45,7 +48,13 @@ class PelotaNumero(Pelota):
     # decifrar premio
     def decifrarPremio(self):
         # return super().decifrarPremio()
-        pass
+        valor_map = {"amarillo": "$1000", "morado": "$2000", "rosa": "$3000"}
+        vigencia_map = {1: "1 mes", 2: "2 meses", 3: "3 meses", 4: "4 meses"}
+
+        valor = valor_map.get(self.color, "Valor desconocido")
+        vigencia = vigencia_map.get(self.numero, "Vigencia desconocida")
+
+        return f"Cantidad: {valor}, Vigencia: {vigencia}"
 
     # toString
     def __str__(self):
