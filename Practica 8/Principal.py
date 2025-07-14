@@ -70,6 +70,10 @@ class MainWindow(QMainWindow):
             return
 
         pelota_letra = PelotaLetra(id, name)
+        self.__pelota_letra = pelota_letra
+        self.__pelota_letra.generarValor()
+        self.__pelota_letra.pintarPelota()
+
         premio_text = str(pelota_letra)
         self.__etLetra.setText(premio_text)
 
@@ -87,13 +91,29 @@ class MainWindow(QMainWindow):
             return
 
         pelota_numero = PelotaNumero(id, name)
+        self.__pelota_numero = pelota_numero
+        self.__pelota_numero.generarValor()
+        self.__pelota_numero.pintarPelota()
+
         print(pelota_numero)
         premio_text = str(pelota_numero)
         self.__etNumero.setText(premio_text)
 
     @Slot()
     def decifraPremio(self):
-        premio_msg = PelotaLetra.decifrarPremio()
+        if self.__pelota_letra is None or self.__pelota_numero is None:
+            QMessageBox.warning(
+                self, "Error", "Debe generar primero ambas pelotas (letra y número)."
+            )
+            return
+
+        info = (
+            f"ID: {self.__pelota_letra.id}\tParticipante: {self.__pelota_letra.participante}\n"
+            f"{self.__pelota_letra.decifrarPremio().strip()}\n"
+            f"{self.__pelota_numero.decifrarPremio().strip()}"
+        )
+
+        self.__etPremio.setText(info)
 
     @Slot()
     def guardar(self):
