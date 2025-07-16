@@ -51,6 +51,7 @@ class MainWindow(QMainWindow):
         self.__botonLetra.clicked.connect(self.premioLetra)
         self.__botonNumero.clicked.connect(self.premioNumero)
         self.__calcularPremio.clicked.connect(self.decifraPremio)
+        self.__guardar.clicked.connect(self.guardar)
         #########################################
 
         self.resize(800, 400)
@@ -107,17 +108,18 @@ class MainWindow(QMainWindow):
             )
             return
 
-        info = (
-            f"ID: {self.__pelota_letra.id}\tParticipante: {self.__pelota_letra.participante}\n"
+        self.info = (
+            f"ID: {self.__pelota_letra.id}\nParticipante: {self.__pelota_letra.participante}\n"
             f"{self.__pelota_letra.decifrarPremio().strip()}\n"
             f"{self.__pelota_numero.decifrarPremio().strip()}"
         )
 
-        self.__etPremio.setText(info)
+        self.__etPremio.setText(self.info)
 
     @Slot()
     def guardar(self):
-        pass
+        with open("premios.txt", "a+", encoding="utf-8") as f:
+            f.write(self.info)
 
     @Slot()
     def mostrar(self):
@@ -126,6 +128,11 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication([])
+    ruta_actual = os.path.dirname(os.path.abspath(__file__))
+    archivoEstilos = os.path.join(ruta_actual, "estilos.qss")
+    with open(archivoEstilos, "r") as f:
+        qss = f.read()
+    app.setStyleSheet(qss)
 
     ####### Agregar estilos QSS ######
 

@@ -52,9 +52,9 @@ class PelotaNumero(Pelota):
         vigencia_map = {1: "1 mes", 2: "2 meses", 3: "3 meses", 4: "4 meses"}
 
         valor = valor_map.get(self.color, "Valor desconocido")
-        vigencia = vigencia_map.get(self.numero, "Vigencia desconocida")
+        vigencia = vigencia_map.get(self.__numero, "Vigencia desconocida")
 
-        return f"Cantidad: {valor}, Vigencia: {vigencia}"
+        return f"Cantidad: {valor}\nVigencia: {vigencia}"
 
     # toString
     def __str__(self):

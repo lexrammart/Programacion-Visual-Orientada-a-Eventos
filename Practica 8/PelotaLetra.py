@@ -63,7 +63,7 @@ class PelotaLetra(Pelota):
         }
 
         unidad = unidad_map.get(self.color, "Unidad desconocida")
-        categoria = categoria_map.get(self.letra, "Categoría desconocida")
+        categoria = categoria_map.get(self.__letra, "Categoría desconocida")
 
         return f"Unidad: {unidad} \nCategoría: {categoria}\n"
 
