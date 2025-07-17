@@ -12,6 +12,13 @@ class MainWindow(QMainWindow):
         self._layout = QHBoxLayout()
 
         self.boton1 = QPushButton("Botoncito")
+        self.boton1.setObjectName("boton1")
+
+        self.boton2 = QPushButton("Otro botón")
+        self.boton2.setObjectName("boton2")
+
+        self._layout.addWidget(self.boton1)
+        self._layout.addWidget(self.boton2)
 
         main_windget = QWidget()
         main_windget.setLayout(self._layout)
