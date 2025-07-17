@@ -128,11 +128,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication([])
-    ruta_actual = os.path.dirname(os.path.abspath(__file__))
-    archivoEstilos = os.path.join(ruta_actual, "estilos.qss")
-    with open(archivoEstilos, "r") as f:
-        qss = f.read()
-    app.setStyleSheet(qss)
 
     ####### Agregar estilos QSS ######
 
