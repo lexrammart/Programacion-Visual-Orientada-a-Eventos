@@ -187,7 +187,7 @@ if __name__ == "__main__":
     ####### Agregar estilos QSS ######
     current_path = os.path.dirname(os.path.abspath(__file__))
     estilos_file = os.path.join(current_path, "estilos.qss")
-    with open(estilos_file, "r") as f:
+    with open(estilos_file, "r", encoding="utf-8") as f:
         qss = f.read()
 
     app.setStyleSheet(qss)
