@@ -1,4 +1,4 @@
-/* --------- Global --------- */
+/* --------- Estilo global de la aplicación --------- */
 QWidget {
     background-color: #2e2e2e;
     color: #f0f0f0;
@@ -6,7 +6,7 @@ QWidget {
     font-size: 13px;
 }
 
-/* --------- Text Inputs --------- */
+/* --------- Campos de texto --------- */
 QLineEdit, QTextEdit {
     background-color: #3b3b3b;
     border: 1px solid #555555;
@@ -15,7 +15,7 @@ QLineEdit, QTextEdit {
     color: #f0f0f0;
 }
 
-/* --------- Labels --------- */
+/* --------- Etiquetas de texto --------- */
 QLabel {
     color: #dcdcdc;
     font-size: 13px;
@@ -34,7 +34,7 @@ QPushButton:hover {
     background-color: #81a1c1;
 }
 
-/* --------- Separadores --------- */
+/* --------- Líneas divisorias --------- */
 QFrame[frameShape="4"] {
     background-color: #707070;
     height: 1px;
@@ -43,23 +43,23 @@ QFrame[frameShape="4"] {
 
 /* --------- Mensajes personalizados --------- */
 
-/* Éxito: por ejemplo, mensaje de “Archivo guardado” */
+/* Mensaje de éxito, por ejemplo: “Archivo guardado” */
 #labelGuardado {
     color: #a3e635;
-    font-size: 16px;      /* ← más grande */
-    font-weight: bold;    /* ← ahora en negritas */
+    font-size: 16px;      /* Más grande */
+    font-weight: bold;    /* En negritas */
     background-color: transparent;
     padding: 4px;
 }
 
-/* Error: mensajes tipo “Advertencia” si decides mostrar en una QLabel */
+/* Mensaje de error o advertencia en una QLabel */
 #errorLabel {
     color: #ff6b6b;
     font-size: 12px;
     font-style: italic;
 }
 
-/* Info: mensajes neutros, como “Cargando…” */
+/* Mensaje informativo, como “Cargando…” */
 #infoLabel {
     color: #7fbcff;
     font-size: 12px;
