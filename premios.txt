@@ -1,6 +1,0 @@
-ID: 12
-Participante: Alejandro
-Unidad: Iztapalapa 
-Categoría: Libros electrónicos
-Cantidad: $2000
-Vigencia: 2 meses

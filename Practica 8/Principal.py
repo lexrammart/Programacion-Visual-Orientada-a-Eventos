@@ -27,7 +27,8 @@ class MainWindow(QMainWindow):
         self.__etPremio = QLabel("Premio")
         self.__guardar = QPushButton("Guardar")
         self.__carga = QLabel("Archivo guardado")
-        self.__carga.setObjectName("_carga")
+        self.__carga.setObjectName("labelGuardado")
+        self.__carga.hide()  ################### oculta el mensaje
         self.__mostrar = QPushButton("Mostrar premios")
         self.__etMostrar = QLabel()
 
@@ -52,6 +53,7 @@ class MainWindow(QMainWindow):
         self.__botonNumero.clicked.connect(self.premioNumero)
         self.__calcularPremio.clicked.connect(self.decifraPremio)
         self.__guardar.clicked.connect(self.guardar)
+        self.__mostrar.clicked.connect(self.mostrar)
         #########################################
 
         self.resize(800, 400)
@@ -67,6 +69,19 @@ class MainWindow(QMainWindow):
                 self,
                 "Campos vacíos",
                 "Por favor llene todos los campos antes de enviar.\n",
+            )
+            return
+
+        if not id.isdigit():
+            QMessageBox.warning(
+                self, "Entrada inválida", "El ID debe contener solo números."
+            )
+
+        if not name.replace(" ", "").isalpha():
+            QMessageBox.warning(
+                self,
+                "Entrada inválida",
+                "El nombre solo debe contener letras y espacios.",
             )
             return
 
@@ -91,17 +106,33 @@ class MainWindow(QMainWindow):
             )
             return
 
+        if not id.isdigit():
+            QMessageBox.warning(
+                self, "Entrada inválida", "El ID debe contener solo números."
+            )
+
+        if not name.replace(" ", "").isalpha():
+            QMessageBox.warning(
+                self,
+                "Entrada inválida",
+                "El nombre solo debe contener letras y espacios.",
+            )
+            return
+
         pelota_numero = PelotaNumero(id, name)
         self.__pelota_numero = pelota_numero
         self.__pelota_numero.generarValor()
         self.__pelota_numero.pintarPelota()
 
-        print(pelota_numero)
         premio_text = str(pelota_numero)
         self.__etNumero.setText(premio_text)
 
     @Slot()
     def decifraPremio(self):
+        if not hasattr(self, "_MainWindow__pelota_letra"):
+            self.__pelota_letra = None
+        if not hasattr(self, "_MainWindow__pelota_numero"):
+            self.__pelota_numero = None
         if self.__pelota_letra is None or self.__pelota_numero is None:
             QMessageBox.warning(
                 self, "Error", "Debe generar primero ambas pelotas (letra y número)."
@@ -118,19 +149,45 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def guardar(self):
-        with open("premios.txt", "a+", encoding="utf-8") as f:
-            f.write(self.info)
+        if not hasattr(self, "info") or not self.info.strip():
+            QMessageBox.warning(
+                self, "Advertencia", "Selecciona una pelota de letra y número primero."
+            )
+            return
+
+        file_path = os.path.join(os.path.dirname(__file__), "premios.txt")
+
+        with open(file_path, "a+", encoding="utf-8") as f:
+            f.write(self.info + "\n\n")
+            self.__carga.show()
+
+        QTimer.singleShot(2000, self.__carga.hide)
 
     @Slot()
     def mostrar(self):
-        pass
+        file_path = os.path.join(os.path.dirname(__file__), "premios.txt")
+
+        if not os.path.exists(file_path):
+            QMessageBox.warning(self, "Sin premios", "No hay premios guardados.")
+            return
+        with open(file_path, "r", encoding="utf-8") as f:
+            contenido = f.read().strip()
+            if contenido:
+                self.__etMostrar.setText(contenido)
+            else:
+                QMessageBox.warning(self, "Sin premios", "No hay premios guardados.")
 
 
 if __name__ == "__main__":
     app = QApplication([])
 
     ####### Agregar estilos QSS ######
+    current_path = os.path.dirname(os.path.abspath(__file__))
+    estilos_file = os.path.join(current_path, "estilos.qss")
+    with open(estilos_file, "r") as f:
+        qss = f.read()
 
+    app.setStyleSheet(qss)
     ##################################
 
     ventana = MainWindow()

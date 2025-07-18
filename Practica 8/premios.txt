@@ -1,0 +1,35 @@
+ID: 22
+Participante: Alejandro
+Unidad: Xochimilco 
+Categoría: Souvenirs
+Cantidad: $3000
+Vigencia: 2 meses
+
+ID: 23
+Participante: David Aranda
+Unidad: Iztapalapa 
+Categoría: Papelería
+Cantidad: $3000
+Vigencia: 2 meses
+
+ID: 20
+Participante: Andrés Montiel
+Unidad: Xochimilco 
+Categoría: Libros físicos
+Cantidad: $2000
+Vigencia: 4 meses
+
+ID: 20
+Participante: Andrés Montiel
+Unidad: Xochimilco 
+Categoría: Libros físicos
+Cantidad: $2000
+Vigencia: 4 meses
+
+ID: 21
+Participante: Iván Miranda
+Unidad: Azcapotzalco 
+Categoría: Papelería
+Cantidad: $2000
+Vigencia: 4 meses
+

@@ -1,10 +1,67 @@
-QPushButoon {
-    background-color : #4CAF50;
-    color: white;
-    border-radius: 5px;
-
+/* --------- Global --------- */
+QWidget {
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+    font-family: "Arial", sans-serif;
+    font-size: 13px;
 }
 
-QPushButoon:hover {
-    background-color: #3e8e41;
+/* --------- Text Inputs --------- */
+QLineEdit, QTextEdit {
+    background-color: #3b3b3b;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    padding: 5px;
+    color: #f0f0f0;
+}
+
+/* --------- Labels --------- */
+QLabel {
+    color: #dcdcdc;
+    font-size: 13px;
+}
+
+/* --------- Botones --------- */
+QPushButton {
+    background-color: #5e81ac;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: #81a1c1;
+}
+
+/* --------- Separadores --------- */
+QFrame[frameShape="4"] {
+    background-color: #707070;
+    height: 1px;
+    margin: 5px 0;
+}
+
+/* --------- Mensajes personalizados --------- */
+
+/* Éxito: por ejemplo, mensaje de “Archivo guardado” */
+#labelGuardado {
+    color: #a3e635;
+    font-size: 16px;      /* ← más grande */
+    font-weight: bold;    /* ← ahora en negritas */
+    background-color: transparent;
+    padding: 4px;
+}
+
+/* Error: mensajes tipo “Advertencia” si decides mostrar en una QLabel */
+#errorLabel {
+    color: #ff6b6b;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Info: mensajes neutros, como “Cargando…” */
+#infoLabel {
+    color: #7fbcff;
+    font-size: 12px;
+    font-style: italic;
 }
