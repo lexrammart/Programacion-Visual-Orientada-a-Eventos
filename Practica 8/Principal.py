@@ -181,6 +181,9 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication([])
 
+    # Set style to 'Fusion' to ensure QSS works properly on macOS
+    app.setStyle("Fusion")
+
     ####### Agregar estilos QSS ######
     current_path = os.path.dirname(os.path.abspath(__file__))
     estilos_file = os.path.join(current_path, "estilos.qss")
